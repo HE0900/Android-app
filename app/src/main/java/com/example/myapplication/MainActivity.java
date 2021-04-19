@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,8 +10,8 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText idtext;
-    Button btntext;
+    private Button btnmove1;
+    public Button  clicked1;
 
 
     @Override
@@ -17,13 +19,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        idtext = findViewById(R.id.idtext);
-        btntext = findViewById(R.id.btntext);
-
-        btntext.setOnClickListener(new View.OnClickListener() {
+        btnmove1 = findViewById(R.id.btnmove1);
+        btnmove1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                idtext.setText("안녕");
+                Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                startActivity(intent);
+            }
+        });
+        clicked1 = findViewById(R.id.clicked1);
+        clicked1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent()
             }
         });
 
